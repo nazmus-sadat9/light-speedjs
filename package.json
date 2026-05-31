@@ -1,12 +1,16 @@
 {
   "name": "light-kitjs",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "This is a JavaScript library that makes coding easier.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
   "scripts": {
-    "build": "tsup"
+    "build": "tsup",
+    "prepublishOnly": "npm run build"
   },
   "repository": {
     "type": "git",
