@@ -1,5 +1,5 @@
+import { RandomType } from "./types";
 // math random function
-type RandomType = "int" | "floor";
 
 export function random(type: RandomType ,min: number, max: number): number {
   
@@ -8,9 +8,9 @@ export function random(type: RandomType ,min: number, max: number): number {
     throw new RangeError("Invalid range: minmun number can't greater than maximum number.");
   }
 
-  // if input values aren't number
-  if (Number.isNaN(min) || Number.isNaN(max)) {
-    throw new TypeError("Invalid input: argument must be a number.")
+  // if argument missing or not a number
+  if (isNaN(min) || isNaN(max)) {
+    throw new TypeError("Invalid input: arguments must be a number.")
   }
 
 

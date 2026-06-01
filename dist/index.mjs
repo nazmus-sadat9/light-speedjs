@@ -13,8 +13,8 @@ function random(type, min, max) {
   if (min > max) {
     throw new RangeError("Invalid range: minmun number can't greater than maximum number.");
   }
-  if (Number.isNaN(min) || Number.isNaN(max)) {
-    throw new TypeError("Invalid input: argument must be a number.");
+  if (isNaN(min) || isNaN(max)) {
+    throw new TypeError("Invalid input: arguments must be a number.");
   }
   switch (type) {
     case "int":
@@ -28,11 +28,35 @@ function random(type, min, max) {
   }
 }
 
+// src/events.ts
+function event(element, type, callback) {
+  const target = typeof element === "string" ? document.querySelector(element) : element;
+  if (target) {
+    target.addEventListener(type, callback);
+  } else {
+    console.warn(`light-kitjs: Element not found for event ${type}`);
+  }
+}
+
+// src/make.ts
+function make(tagName, options = {}) {
+  const element = document.createElement(tagName);
+  if (options.classes && options.classes.length > 0) {
+    element.classList.add(...options.classes.filter(Boolean));
+  }
+  if (options.text !== void 0) {
+    element.textContent = options.text;
+  }
+  return element;
+}
+
 // src/index.ts
 var lightMath = {
   randNum: random
 };
 export {
+  event,
   lightMath,
+  make,
   math_exports as mathfunc
 };

@@ -20,7 +20,9 @@ var __toCommonJS = (mod) => __copyProps(__defProp({}, "__esModule", { value: tru
 // src/index.ts
 var index_exports = {};
 __export(index_exports, {
+  event: () => event,
   lightMath: () => lightMath,
+  make: () => make,
   mathfunc: () => math_exports
 });
 module.exports = __toCommonJS(index_exports);
@@ -34,8 +36,8 @@ function random(type, min, max) {
   if (min > max) {
     throw new RangeError("Invalid range: minmun number can't greater than maximum number.");
   }
-  if (Number.isNaN(min) || Number.isNaN(max)) {
-    throw new TypeError("Invalid input: argument must be a number.");
+  if (isNaN(min) || isNaN(max)) {
+    throw new TypeError("Invalid input: arguments must be a number.");
   }
   switch (type) {
     case "int":
@@ -49,12 +51,36 @@ function random(type, min, max) {
   }
 }
 
+// src/events.ts
+function event(element, type, callback) {
+  const target = typeof element === "string" ? document.querySelector(element) : element;
+  if (target) {
+    target.addEventListener(type, callback);
+  } else {
+    console.warn(`light-kitjs: Element not found for event ${type}`);
+  }
+}
+
+// src/make.ts
+function make(tagName, options = {}) {
+  const element = document.createElement(tagName);
+  if (options.classes && options.classes.length > 0) {
+    element.classList.add(...options.classes.filter(Boolean));
+  }
+  if (options.text !== void 0) {
+    element.textContent = options.text;
+  }
+  return element;
+}
+
 // src/index.ts
 var lightMath = {
   randNum: random
 };
 // Annotate the CommonJS export names for ESM import in node:
 0 && (module.exports = {
+  event,
   lightMath,
+  make,
   mathfunc
 });
