@@ -20,7 +20,7 @@ export function random(type: RandomType ,min: number, max: number): number {
       break;
   
     case "floor": // floor random value
-      return Math.random() * (max - min) + mim;
+      return Math.random() * (max - min) + min;
       break;
   }
 }

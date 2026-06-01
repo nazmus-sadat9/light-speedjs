@@ -30,8 +30,21 @@ var math_exports = {};
 __export(math_exports, {
   random: () => random
 });
-function random(min, max) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+function random(type, min, max) {
+  if (min > max) {
+    throw new RangeError("Invalid range: minmun number can't greater than maximum number.");
+  }
+  if (Number.isNaN(min) || Number.isNaN(max)) {
+    throw new TypeError("Invalid input: argument must be a number.");
+  }
+  switch (type) {
+    case "int":
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+      break;
+    case "floor":
+      return Math.random() * (max - min) + min;
+      break;
+  }
 }
 
 // src/index.ts
