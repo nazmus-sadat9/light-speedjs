@@ -1,4 +1,4 @@
-# light-kit.js
+# lighting.js
 This is a JavaScript library that makes coding easier and it made by TypeScript. This is also a frontend library. The JavaScript function are very simple at there.
 
 ## Features
@@ -11,8 +11,8 @@ The unique part is type safety, easier and no compilation.
 
 ## Math functions
 ```
-// import math functions from light-kit js 
-import { lightMath } from "light-kitjs";
+// import math functions from lightingjs
+import { lightMath } from "lightingjs";
 
 // the arguments are type, minimum and maximum number.
 const num = lightMath.randNum("int", 1, 15);
@@ -23,7 +23,7 @@ console.log(num);
 ## Event function
 ```
 // import the event function
-import { event } from "light-kitjs";
+import { event } from "lightingjs";
 
 // the arguments are element, event type, callback
 event("#button", "click", () => {
@@ -34,7 +34,7 @@ event("#button", "click", () => {
 ## Make function
 ```
 // import the make function
-import { make } from "light-kitjs";
+import { make } from "lightingjs";
 
 // this function is easier Version of 'document.createElement()'
 const box = make("div", {
@@ -57,15 +57,15 @@ $("box");
 
 ## Installation
 ```
-npm i light-kitjs
+npm i lightingjs
 ```
 
 ## Update
 ```
-npm update light-kitjs
+npm update lightingjs
 ```
 
 ## Version
 ```
-npm list light-kitjs
+npm list lightingjs
 ```

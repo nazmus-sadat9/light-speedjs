@@ -17,8 +17,10 @@ export const $ = (selector: string): HTMLElement | null => {
 };
 
 // use for browser and frontend 
-(window as any)._ = _;
-(window as any).$ = $;
+if (typeof window !== undefined){
+  (window as any)._ = _;
+  (window as any).$ = $;
+}
 
 
 // ES modules

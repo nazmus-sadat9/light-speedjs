@@ -82,8 +82,10 @@ var _ = (selector) => {
 var $ = (selector) => {
   return document.getElementById(selector);
 };
-window._ = _;
-window.$ = $;
+if (typeof window !== void 0) {
+  window._ = _;
+  window.$ = $;
+}
 var lightMath = {
   randNum: random
 };

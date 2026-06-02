@@ -1,6 +1,6 @@
 {
-  "name": "light-kitjs",
-  "version": "1.2.6",
+  "name": "lightingjs",
+  "version": "0.2.6",
   "description": "This is a JavaScript library that makes coding easier.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
@@ -17,7 +17,9 @@
     "url": "git+https://github.com/nazmus-sadat9/light-speedjs.git"
   },
   "keywords": [
-    "light-kit"
+    "lighting",
+    "easier",
+    "fast"
   ],
   "author": "Nazmus Sadat",
   "license": "MIT",
