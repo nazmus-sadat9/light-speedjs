@@ -1,9 +1,11 @@
 {
   "name": "lightingjs",
-  "version": "0.3.7",
+  "version": "0.3.9",
   "description": "This is a JavaScript library that makes coding easier.",
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
+  "unpkg": "./dist/index.global.js",
+  "jsdelivr": "./dist/index.global.js",
   "types": "./dist/index.d.ts",
   "files": [
     "dist"

@@ -1,8 +1,24 @@
+// modules
+import * as mathfunc from "./math";
+import { makeTag } from "./make";
+import { makeEvent } from "./events";
+export * from "./types";
+export { makeEvent } from "./events";
+export { makeTag } from "./make";
+
+export { mathfunc };
+
+// light object
+export const light = {
+  randNum: mathfunc.random,
+}
+
 // global functions 
 declare global {
   function query(selector: string): HTMLElement | null;
-  //function _all(selector: string);
   function id(selector: string): HTMLElement | null;
+  function makeTag<K extends keyof HTMLElementTagNameMap>(tagName: K, options?: any): HTMLElementTagNameMap[K];
+  function makeEvent(element: any, type: string, callback: any): void;
 }
 
 // describe the global functions
@@ -20,19 +36,6 @@ export const id = (selector: string): HTMLElement | null => {
 if (typeof window !== "undefined"){
   (window as any).query = query;
   (window as any).id = id;
-}
-
-
-// modules
-import * as mathfunc from "./math";
-export * from "./types";
-export { makeEvent } from "./events";
-export { makeTag } from "./make";
-
-
-export { mathfunc };
-
-// math object
-export const lightMath = {
-  randNum: mathfunc.random,
+  (window as any).makeTag = makeTag;
+  (window as any).makeEvent = makeEvent;
 }

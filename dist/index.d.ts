@@ -22,15 +22,16 @@ callback: EventCallback): void;
 
 declare function makeTag<K extends keyof HTMLElementTagNameMap>(tagName: K, options?: MakeOptions): HTMLElementTagNameMap[K];
 
+declare const light: {
+    randNum: typeof random;
+};
 declare global {
     function query(selector: string): HTMLElement | null;
     function id(selector: string): HTMLElement | null;
+    function makeTag<K extends keyof HTMLElementTagNameMap>(tagName: K, options?: any): HTMLElementTagNameMap[K];
+    function makeEvent(element: any, type: string, callback: any): void;
 }
 declare const query: (selector: string) => HTMLElement | null;
 declare const id: (selector: string) => HTMLElement | null;
 
-declare const lightMath: {
-    randNum: typeof random;
-};
-
-export { type ElementAttributes, type EventCallback, type EventTargetEl, type MakeOptions, type RandomType, id, lightMath, makeEvent, makeTag, math as mathfunc, query };
+export { type ElementAttributes, type EventCallback, type EventTargetEl, type MakeOptions, type RandomType, id, light, makeEvent, makeTag, math as mathfunc, query };

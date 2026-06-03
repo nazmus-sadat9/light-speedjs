@@ -12,19 +12,16 @@ The unique part is type safety, easier and no compilation.
 ## Math functions
 ```
 // import math functions from lightingjs
-import { lightMath } from "lightingjs";
+import { light } from "lightingjs";
 
 // the arguments are type, minimum and maximum number.
-const num = lightMath.randNum("int", 1, 15);
+const num = light.randNum("int", 1, 15);
 
 console.log(num);
 ```
 
 ## makeEvent function
 ```
-// import the makeEvent function
-import { makeEvent } from "lightingjs";
-
 // the arguments are element, event type, callback
 makeEvent("#button", "click", () => {
   console.log("clicked!");
@@ -33,9 +30,6 @@ makeEvent("#button", "click", () => {
 
 ## makeTag function
 ```
-// import the makeTag function
-import { makeTag } from "lightingjs";
-
 // this function is easier Version of 'document.createElement()'
 const box = makeTag("div", {
   text: "hello world", // inner text
@@ -47,7 +41,6 @@ document.body.appendChild(box); // add in body
 
 ## Selectors
 ```
-// Selectors are built in functions 
 // query selector 
 query(".box");
 
@@ -60,6 +53,15 @@ id("box");
 npm i lightingjs
 ```
 
+## CDNs 
+```
+<script src="https://unpkg.com/lightingjs"></script> 
+
+// or 
+
+<script src="https://cdn.jsdelivr.net/npm/lightingjs"></script>
+```
+
 ## Update
 ```
 npm update lightingjs
@@ -69,3 +71,4 @@ npm update lightingjs
 ```
 npm list lightingjs
 ```
+
